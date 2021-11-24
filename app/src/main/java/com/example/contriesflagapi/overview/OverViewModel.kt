@@ -33,7 +33,7 @@ class OverViewModel: ViewModel()  {
             try {
                 val listResult = CountryApi.retrofitService.getPhotos()
 
-                _status.value =  "Success: ${listResult.size} Mars photos retrieved"
+                _status.value =  "Success: ${listResult.data.size} flags photos retrieved"
             }
 
             catch (e: Exception) {

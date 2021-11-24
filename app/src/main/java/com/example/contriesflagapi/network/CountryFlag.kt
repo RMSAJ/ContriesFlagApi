@@ -24,7 +24,7 @@ private val retrofit = Retrofit.Builder()
 
 interface CountryFlag {
 @GET("images")
- suspend fun getPhotos() : Array<dataarray>
+ suspend fun getPhotos() : dataarray
 }
 
 object CountryApi{

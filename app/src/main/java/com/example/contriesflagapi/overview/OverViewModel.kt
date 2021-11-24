@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.contriesflagapi.network.CountryApi
+import com.example.contriesflagapi.network.contriemodel
 import kotlinx.coroutines.launch
 import java.lang.Exception
 import java.util.*
@@ -12,6 +13,8 @@ import java.util.*
 class OverViewModel: ViewModel()  {
     // The internal MutableLiveData that stores the status of the most recent request
     private val _status = MutableLiveData<String>()
+    private val _photos = MutableLiveData<contriemodel>()
+    val photos: LiveData<contriemodel> = _photos
 
     // The external immutable LiveData for the request status
     val status: LiveData<String> = _status
@@ -31,9 +34,9 @@ class OverViewModel: ViewModel()  {
     private fun getCountryPhotos() {
         viewModelScope.launch {
             try {
-                val listResult = CountryApi.retrofitService.getPhotos()
+                _photos.value = CountryApi.retrofitService.getPhotos().data[0]
 
-                _status.value =  "Success: ${listResult.data.size} flags photos retrieved"
+                _status.value =  "Success: ${_photos.value!!.flag} flags photos retrieved"
             }
 
             catch (e: Exception) {

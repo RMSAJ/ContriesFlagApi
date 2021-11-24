@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Mohd/AndroidStudioProjects/ContriesFlagApi/app/src/main/res/drawable/ic_broken_image.xml" value="0.1453125" />
+        <entry key="..\:/Users/Mohd/AndroidStudioProjects/ContriesFlagApi/app/src/main/res/drawable/ic_connection_error.xml" value="0.1453125" />
         <entry key="..\:/Users/Mohd/AndroidStudioProjects/ContriesFlagApi/app/src/main/res/layout/activity_main.xml" value="0.20471014492753623" />
         <entry key="..\:/Users/Mohd/AndroidStudioProjects/ContriesFlagApi/app/src/main/res/layout/fragment_over_view.xml" value="0.20471014492753623" />
         <entry key="..\:/Users/Mohd/AndroidStudioProjects/ContriesFlagApi/app/src/main/res/layout/grid_view_item.xml" value="0.2033514492753623" />

@@ -6,10 +6,9 @@
 
     <data>
         <variable
-            name="contryModel"
-            type="com.example.contriesflagapi.network.contriemodel" />
+            name="modeldata"
+            type="com.example.contriesflagapi.network.CountryModel"/>
     </data>
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -24,7 +23,7 @@
             android:scaleType="fitXY"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:photoUrl="@{contryModel.flag}"
+            app:photoUrl="@{modeldata.flag}"
             tools:ignore="MissingConstraints"
             tools:src="@tools:sample/backgrounds/scenic" />
     <TextView
@@ -33,11 +32,9 @@
         app:layout_constraintTop_toBottomOf="@id/flagPhoto"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@{contryModel.name}"
+        android:text="@{modeldata.name}"
         android:gravity="center"
         />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

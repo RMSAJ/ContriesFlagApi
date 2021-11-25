@@ -1,14 +1,13 @@
 package com.example.contriesflagapi
 
-import PhotoGridAdapter
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.example.contriesflagapi.network.contriemodel
-import com.example.contriesflagapi.network.dataarray
+import com.example.contriesflagapi.network.CountryModel
 import java.util.*
+
 
 @BindingAdapter("photoUrl")
 fun ImageView.bind(photoUrl: String?){
@@ -23,7 +22,7 @@ fun ImageView.bind(photoUrl: String?){
 
 
 @BindingAdapter("listData")
-fun RecyclerView.bindRecyclerView(data: List<contriemodel>
+fun RecyclerView.bindRecyclerView(data: List<CountryModel>?
 ) {
     if (this.adapter == null) {
         this.adapter = PhotoGridAdapter()

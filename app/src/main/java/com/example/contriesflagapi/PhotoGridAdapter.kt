@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.contriesflagapi.databinding.GridViewItemBinding
 import com.example.contriesflagapi.network.contriemodel
+import com.example.contriesflagapi.network.dataarray
 
 class  PhotoGridAdapter : ListAdapter <contriemodel,
         PhotoGridAdapter.FlagViewHolder>(DiffCallback) {
@@ -19,7 +20,7 @@ class  PhotoGridAdapter : ListAdapter <contriemodel,
 
     companion object DiffCallback : DiffUtil.ItemCallback<contriemodel>() {
         override fun areItemsTheSame(oldItem: contriemodel, newItem: contriemodel): Boolean {
-            return oldItem.name == newItem.name
+            return oldItem == newItem
         }
 
         override fun areContentsTheSame(oldItem: contriemodel, newItem: contriemodel): Boolean {

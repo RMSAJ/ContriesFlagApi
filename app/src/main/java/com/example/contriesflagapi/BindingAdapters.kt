@@ -23,9 +23,12 @@ fun ImageView.bind(photoUrl: String?){
 
 
 @BindingAdapter("listData")
-fun bindRecyclerView(recyclerView: RecyclerView,
-  data: List<contriemodel>
+fun RecyclerView.bindRecyclerView(data: List<contriemodel>
 ) {
-    val adapter = recyclerView.adapter as PhotoGridAdapter
+    if (this.adapter == null) {
+        this.adapter = PhotoGridAdapter()
+    }
+
+    val adapter = this.adapter as PhotoGridAdapter
     adapter.submitList(data)
 }

@@ -10,14 +10,34 @@
             type="com.example.contriesflagapi.network.contriemodel" />
     </data>
 
-    <ImageView
-        android:id="@+id/flagPhoto"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="170dp"
-        android:scaleType="fitXY"
-        android:adjustViewBounds="true"
-        android:padding="2dp"
-        app:photoUrl="@{contryModel.flag}"
-        tools:src="@tools:sample/backgrounds/scenic"/>
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/flagPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:padding="2dp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:photoUrl="@{contryModel.flag}"
+            tools:ignore="MissingConstraints"
+            tools:src="@tools:sample/backgrounds/scenic" />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/flagPhoto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@{contryModel.name}"
+        android:gravity="center"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

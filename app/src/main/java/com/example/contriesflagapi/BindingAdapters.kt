@@ -27,6 +27,8 @@ fun ImageView.bind(photoUrl: String?){
            .crossfade(true)
            .crossfade(500)
            .data(photoUrl)
+           .placeholder(R.drawable.loading_animation)
+           .error(R.drawable.ic_broken_image)
            .target(this)
            .build()
 
